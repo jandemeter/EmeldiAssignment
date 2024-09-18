@@ -38,7 +38,6 @@ public class VacationController {
         return ResponseEntity.ok(vacations);
     }
 
-
     @PostMapping
     public ResponseEntity<Vacation> saveVacation(@RequestBody VacationRequest vacationRequest){
         Vacation newVacation = this.vacationService.saveVacation(vacationRequest);

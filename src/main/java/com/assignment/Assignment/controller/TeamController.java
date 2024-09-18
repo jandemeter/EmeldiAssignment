@@ -33,7 +33,7 @@ public class TeamController {
     }
 
     @GetMapping("/{teamId}/employees")
-    public ResponseEntity<List<Employee>> getTeamEmployees(@PathVariable("teamId") Long teamId) {
+    public ResponseEntity<List<Employee>> getTeamEmployees(@PathVariable Long teamId) {
         List<Employee> employees = this.employeeService.getTeamEmployees(teamId);
         if (employees.isEmpty()) {
             return ResponseEntity.noContent().build();

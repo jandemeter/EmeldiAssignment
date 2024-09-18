@@ -26,6 +26,10 @@ CREATE TABLE IF NOT EXISTS vacation (
     FOREIGN KEY (approved_by) REFERENCES employee(id)
     );
 
+TRUNCATE TABLE vacation CASCADE;
+TRUNCATE TABLE employee CASCADE;
+TRUNCATE TABLE team CASCADE;
+
 INSERT INTO team (id, name)
 VALUES
     (1, 'Testing Team');

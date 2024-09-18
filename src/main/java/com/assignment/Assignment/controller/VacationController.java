@@ -23,7 +23,7 @@ public class VacationController {
         return ResponseEntity.ok(vacations);
     }
 
-    @GetMapping("/{id}/")
+    @GetMapping("/{id}")
     public ResponseEntity<Vacation> getVacation(@PathVariable("id") Long vacationId){
         Optional<Vacation> vacation = this.vacationService.getVacation(vacationId);
         return vacation.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
